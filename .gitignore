@@ -1,9 +1,7 @@
-_site
 .sass-cache
 .jekyll-metadata
 .DS_Store
 .cache-loader
 dist
-src/assets
 node_modules
 yarn-error.log

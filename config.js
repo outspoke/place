@@ -7,7 +7,7 @@ module.exports = {
   paths: {
     root: process.cwd(),
     src: path.resolve( __dirname, './src/_assets' ),
-    dist: path.resolve( __dirname, './src/assets' ),
+    dist: path.resolve( __dirname, './dist/assets' ),
   },
   entry: {
     app: ['./js/app.js', './css/app.scss'],
@@ -30,7 +30,7 @@ module.exports = {
     "dist/**/*.html",
   ],
   open: true,
-  publicPath: '/assets',
+  publicPath: '/assets/',
 }
 
 if (process.env.NODE_ENV === undefined) {
