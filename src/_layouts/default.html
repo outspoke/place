@@ -15,9 +15,9 @@ layout: compress
       <link href="{{ 'assets/app.css' | relative_url }}" rel="stylesheet">
     {% endif %}
   </head>
-  <body>
+  <body class="{% include body-class.html %}">
 
-    <div class="grid-container grid-container-padded">
+    <div class="grid-container">
       {{ content }}
     </div>
 
