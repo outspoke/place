@@ -1,6 +1,10 @@
 const path = require('path');
 const { argv } = require('yargs');
+const yaml = require('js-yaml');
+const fs = require('fs');
+const urlJoin = require('url-join');
 
+const jekyllConfig = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
 const isProduction = !!((argv.env && argv.env.production) || argv.p);
 
 module.exports = {
@@ -24,13 +28,13 @@ module.exports = {
     watcher: !!argv.watch,
   },
   env: Object.assign({ production: isProduction, development: !isProduction }, argv.env),
-  devUrl: 'http://127.0.0.1:4000/',
+  devUrl: urlJoin('http://127.0.0.1:4000', jekyllConfig.baseurl, '/'),
   proxyUrl: 'http://localhost:3000',
   watch: [
     "dist/**/*.html",
   ],
   open: true,
-  publicPath: '/assets/',
+  publicPath: path.join(jekyllConfig.baseurl, '/assets/'),
 }
 
 if (process.env.NODE_ENV === undefined) {
