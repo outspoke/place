@@ -20,7 +20,13 @@ layout: compress
   <body class="{% include body-class.html %}">
 
     <div class="grid-container">
-      {{ content }}
+      <div class="grid-x grid-margin-x align-center">
+        <div class="cell large-8">
+          <div class="amethyst">
+            {{ content }}
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="{{ 'assets/app.js' | relative_url }}"></script>
