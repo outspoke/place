@@ -30,11 +30,11 @@ module.exports = {
       proxyUrl: config.proxyUrl,
       watch: config.watch,
       delay: 500,
-      advanced: {
-        browserSync: {
-          browser: "google-chrome",
-        },
-      },
+      // advanced: {
+      //   browserSync: {
+      //     browser: "google-chrome",
+      //   },
+      // },
     }),
   ],
 };

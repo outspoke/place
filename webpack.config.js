@@ -173,6 +173,7 @@ if (config.env.production) {
 }
 
 if (config.enabled.watcher) {
+  webpackConfig.entry = require('./addHotMiddleware')(webpackConfig.entry);
   webpackConfig = merge(webpackConfig, require('./webpack.config.watch'));
 }
 
