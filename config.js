@@ -7,11 +7,6 @@ const url = require('url');
 const jekyllConfig = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
 const isProduction = !!((argv.env && argv.env.production) || argv.p);
 
-let jekyllUrl = 'http://127.0.0.1:4000';
-if(jekyllConfig.baseurl !== "") {
-  jekyllUrl = url.resolve(jekyllUrl, jekyllConfig.baseurl) + '/';
-}
-
 module.exports = {
   paths: {
     root: process.cwd(),
@@ -33,13 +28,17 @@ module.exports = {
     watcher: !!argv.watch,
   },
   env: Object.assign({ production: isProduction, development: !isProduction }, argv.env),
-  devUrl: jekyllUrl,
+  devUrl: 'http://127.0.0.1:4000',
   proxyUrl: 'http://localhost:3000',
   watch: [
     "dist/**/*.html",
   ],
   open: true,
   publicPath: path.join(jekyllConfig.baseurl, '/assets/'),
+}
+
+if(jekyllConfig.baseurl !== "") {
+  module.exports.devUrl = url.resolve(module.exports.devUrl, jekyllConfig.baseurl) + '/';
 }
 
 if (process.env.NODE_ENV === undefined) {
