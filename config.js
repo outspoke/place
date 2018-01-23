@@ -28,7 +28,7 @@ module.exports = {
     watcher: !!argv.watch,
   },
   env: Object.assign({ production: isProduction, development: !isProduction }, argv.env),
-  devUrl: urlJoin('http://127.0.0.1:4000', jekyllConfig.baseurl, '/'),
+  devUrl: urlJoin('http://127.0.0.1:4000', jekyllConfig.baseurl),
   proxyUrl: 'http://localhost:3000',
   watch: [
     "dist/**/*.html",

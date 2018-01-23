@@ -6,6 +6,7 @@ const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const config = require('./config');
 
@@ -42,7 +43,7 @@ let webpackConfig = {
       },
       {
         test: /\.js$/,
-        exclude: [/(node_modules|bower_components)(?![/|\\](bootstrap|foundation-sites))/],
+        exclude: [/node_modules(?![/|\\](bootstrap|foundation-sites))/],
         use: [
           { loader: 'cache' },
           { loader: 'buble', options: { objectAssign: 'Object.assign' } },
@@ -78,7 +79,7 @@ let webpackConfig = {
       },
       {
         test: /\.(ttf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
-        include: /node_modules|bower_components/,
+        include: /node_modules/,
         loader: 'url',
         options: {
           limit: 4096,
@@ -92,7 +93,6 @@ let webpackConfig = {
     modules: [
       config.paths.src,
       'node_modules',
-      'bower_components',
     ],
     enforceExtension: false,
   },
@@ -159,6 +159,7 @@ let webpackConfig = {
       failOnError: !config.enabled.watcher,
       syntax: 'scss',
     }),
+    new FriendlyErrorsWebpackPlugin(),
   ],
 };
 
