@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": "git@github.com:jayarnielsen/amethyst.git",
   "author": "Jay Nielsen <jay@jayarnielsen.com>",
-  "homepage": "https://github.com/jayarnielsen/amethyst",
+  "homepage": "https://jayarnielsen.github.io/amethyst/",
   "license": "MIT",
   "scripts": {
     "serve": "bundle exec jekyll serve --drafts --incremental",
