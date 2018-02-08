@@ -36,10 +36,17 @@ body {
   }
 }
 
-.page-title {
-  font-style: italic;
-  letter-spacing: 0.03em;
-  margin-bottom: 10vh;
+.logo {
+  margin-bottom: 20vh;
+
+  img {
+    max-height: 25vh;
+    max-width: 90%;
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: 15vh;
+  }
 }
 
 .btn {
