@@ -1,0 +1,72 @@
+body {
+  animation: colorchange 40s infinite;
+}
+
+@keyframes colorchange {
+  0% {
+    background: #f4364c;
+  }
+
+  15% {
+    background: #ed8b00;
+  }
+
+  30% {
+    background: #ffd100;
+  }
+
+  45% {
+    background: #b5bd00;
+  }
+
+  60% {
+    background: #2f6f7a;
+  }
+
+  70% {
+    background: #63666a;
+  }
+
+  80% {
+    background: #101820;
+  }
+
+  100% {
+    background: #f4364c;
+  }
+}
+
+.page-title {
+  font-style: italic;
+  letter-spacing: 0.03em;
+  margin-bottom: 10vh;
+}
+
+.btn {
+  &:hover,
+  &:focus {
+    font-weight: 700;
+    font-style: italic;
+    color: $white;
+  }
+}
+
+.social {
+  padding-top: 2vh;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  a {
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+}
+
+// Bump up the size of everything on 4k monitors
+@include breakpoint(2000px) {
+  html {
+    font-size: 150%;
+  }
+}

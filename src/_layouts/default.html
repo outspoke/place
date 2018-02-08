@@ -14,21 +14,15 @@ layout: compress
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relative_url }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/cvo1xih.css">
     {% if jekyll.environment != 'development' %}
       <link href="{{ 'assets/app.css' | relative_url }}" rel="stylesheet">
     {% endif %}
   </head>
   <body class="{% include body-class.html %}">
 
-    <div class="grid-container">
-      <div class="grid-x grid-margin-x align-center">
-        <div class="cell large-8">
-          <div class="amethyst">
-            {{ content }}
-          </div>
-        </div>
-      </div>
-    </div>
+    {{ content }}
 
     <script src="{{ 'assets/app.js' | relative_url }}"></script>
   </body>
