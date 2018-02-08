@@ -17,8 +17,8 @@ title: PLACE
 email: jay@jayarnielsen.com
 description: > # this means to ignore newlines until "baseurl:"
   PLACE
-baseurl: "/place" # the subpath of your site, e.g. /blog
-url: "https://outspoke.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://placearc.com" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty
 
 # Build settings
