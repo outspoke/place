@@ -19,6 +19,14 @@ layout: compress
     {% if jekyll.environment != 'development' %}
       <link href="{{ 'assets/app.css' | relative_url }}" rel="stylesheet">
     {% endif %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114507328-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-114507328-1');
+    </script>
   </head>
   <body class="{% include body-class.html %}">
 
